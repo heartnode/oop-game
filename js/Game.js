@@ -79,7 +79,7 @@ class Game{
     removeLife(){
         // Remove Life from in the order of from right to left
         const tries = [...document.querySelectorAll(".tries")];
-        const removingLife = tries.findLast(tryElem => tryElem.querySelector('img[src$="liveHeart.png"]') !== null);
+        const removingLife = tries.reverse().find(tryElem => tryElem.querySelector('img[src$="liveHeart.png"]') !== null);
         if (removingLife){
             //Update the UI with lost heart image
             removingLife.firstChild.src = 'images/lostHeart.png';
