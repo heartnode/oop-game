@@ -22,6 +22,9 @@ class Game{
      * Initialize the game
      */
     startGame(){
+        //Hides the start message overlay
+        document.querySelector('.start').style.display='none';
+
         //Gets a random phase from the phrases property
         const phrase = this.getRandomPhrase();
 

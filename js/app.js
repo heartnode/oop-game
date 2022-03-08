@@ -21,9 +21,6 @@ document.getElementById('btn__reset').addEventListener('click',()=>{
     
     //Start the game UI
     game.startGame();
-    
-    //Hides the start message overlay
-    document.querySelector('.start').style.display='none';
 
     //Enable keyboard
     document.addEventListener('keyup',keyHandler);
