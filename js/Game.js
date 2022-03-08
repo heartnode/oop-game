@@ -35,7 +35,7 @@ class Game{
                         this.gameOver('win');
                     }
                 } else {
-                    buttonClicked.classList.add('wrong');
+                    buttonClicked.classList.add('wrong','animated','shake');
                     this.removeLife();
                 }
             }

@@ -29,7 +29,7 @@ class Phrase{
         const allMatched = this.ul.querySelectorAll(`li.${letter}`);
         const revealLetter = node => {
             node.classList.remove('hide');
-            node.classList.add('show')
+            node.classList.add('show','animate','zoomIn');
         };
         [...allMatched].forEach(match=>revealLetter(match));
     }
