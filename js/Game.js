@@ -41,10 +41,9 @@ class Game{
     /**
      * Handles the click event of the on screen keyboard and checks game winning status
      */
-    handleInteraction(){
-        const qwerty = document.getElementById('qwerty');
+    handleInteraction(event){
         // The click event handler is used in this method and in resetGame method
-        this.clickHandler = (event) =>{
+     
             //Make sure the button with key class is clicked ignore others
             if (event.target.classList.contains('key')){
                 //Disable the clicked character button
@@ -71,9 +70,8 @@ class Game{
                     this.removeLife();
                 }
             }
-        }
-        // Enable click event on the on screen keyboard
-        qwerty.addEventListener('click',this.clickHandler);
+        
+
     }
     /**
      * Remove life from score board and determines if is lose
@@ -146,8 +144,5 @@ class Game{
         //Reset all the lives with proper images
         const hearts = [...document.querySelectorAll('.tries img')];
         hearts.forEach(heart=>heart.src="images/liveHeart.png");
-
-        //Remove the keyboard and keyup event listener 
-        document.getElementById('qwerty').removeEventListener('click',this.clickHandler);
     }
 }

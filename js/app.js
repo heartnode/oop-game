@@ -1,19 +1,20 @@
 /* Treehouse FSJS Techdegree
  * Project 4 - OOP Game App
  * app.js */
-
+let game;
 //When "Start Game" is pushed game will start
 document.getElementById('btn__reset').addEventListener('click',()=>{
     //Instantiate a game object to keep track of all the game states
-    const game = new Game();
+    game = new Game();
     //Start the game UI
     game.startGame();
-    //Setup handle interaction
-    game.handleInteraction();    
     //Hides the start message overlay
     document.querySelector('.start').style.display='none';
 });
 
+// Enable click event on the on screen keyboard
+document.getElementById('qwerty').addEventListener('click',(event)=>game.handleInteraction(event));
+   
 // Exceed Expectation listen for Keyboard event
 const keyHandler = (e)=>{
 //Accepts a-z keys only
