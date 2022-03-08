@@ -144,5 +144,8 @@ class Game{
         //Reset all the lives with proper images
         const hearts = [...document.querySelectorAll('.tries img')];
         hearts.forEach(heart=>heart.src="images/liveHeart.png");
+
+        //Remove listening on keyboard prevent permature gaming
+        document.removeEventListener('keydown',keyHandler);
     }
 }
